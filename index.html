@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual Sarah Cristina</title>
+<style>
+/* Layout: video de capa e paginas do manual, sem margens, de ponta a ponta */
+:root{--bg:#141414;color-scheme:dark}
+body{background:var(--bg)}
+.pages{display:flex;flex-direction:column}
+.pages video,.pages img{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:16/9;background:var(--bg)}
+</style>
+</head>
+<body style="margin:0">
+<main class="pages" id="pages">
+  <video src="capa.mp4" autoplay muted loop playsinline preload="auto" aria-label="Animação do logo Sarah Cristina/"></video>
+</main>
+<script>
+const P=["02-conceito","03-versoes","04-area-de-protecao","05-a-barra","06-construcao-da-barra","07-cores","08-tipografia","09-elementos-graficos","10-versoes-de-cor","11-usos-incorretos","12-aplicacoes-papelaria","13-encerramento"];
+const pages=document.getElementById("pages");
+P.forEach((a,i)=>{const img=document.createElement("img");img.src=`${a}.jpg`;img.alt="Página do manual";img.width=1920;img.height=1080;img.loading=i<2?"eager":"lazy";pages.appendChild(img);});
+const v=pages.querySelector("video");v.play().catch(()=>{});
+</script>
+
+</body>
+</html>
